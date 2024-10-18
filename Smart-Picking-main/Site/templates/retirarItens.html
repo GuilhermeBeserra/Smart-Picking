@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    {% load static %}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Picking - Retirar Itens</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/retirarItens.css' %}"  media="screen" />
+</head>
+<body>
+    <div class="sidebar">
+        <h1>SMART <span style="color: #87A5CB;">PICKING</span></h1>
+        <h2>Menu</h2>
+        <ul>
+            <li> <a  onclick="window.location.href='{% url 'dados' %}';" href="#" > Início </a> </li>
+            <li> <a onclick="window.location.href='{% url 'cadItens' %}';" href="#" > Cadastrar itens </a> </li>
+            <li> <a onclick="window.location.href='{% url 'retItens' %}';" href= "#" > Retirar itens </a> </li>
+            <li> <a onclick="window.location.href='{% url 'VizEtoque' %}';" href= "#" > Visualizar estoque </a> </li>
+        </ul>
+        <div class="logo-container">
+            <img src="{% static 'css/img/_4f0175fe-f321-4cb1-a2e7-1e5bb5b34891-removebg-preview 2.png' %}" alt="Logo do Avião">
+        </div>
+    </div>
+    <div class="main-content">
+        <h1>Retirar <span style="color: #87A5CB;">Itens</span></h1>
+        <div class="search-bar">
+            <input type="text" placeholder="Pesquisa">
+        </div>
+        <div class="table-container">
+            <table>
+                <tr>
+                    <th>Nome</th>
+                    <th>ID</th>
+                    <th>Data de entrada</th>
+                    <th>Nome do Fornecedor</th>
+                    <th>Quantidade a ser retirada</th>
+                </tr>
+                <tr onclick="showPopup('Produto 1')">
+                    <td>Produto 1</td>
+                    <td>A1A1A</td>
+                    <td>2023-01-01</td>
+                    <td>Fornecedor A</td>
+                    <td>10</td>
+                </tr>
+                <tr onclick="showPopup('Produto 2')">
+                    <td>Produto 2</td>
+                    <td>B2B2B</td>
+                    <td>2023-02-02</td>
+                    <td>Fornecedor B</td>
+                    <td>20</td>
+                </tr>
+                <tr onclick="showPopup('Produto 3')">
+                    <td>Produto 3</td>
+                    <td>C3C3C</td>
+                    <td>2023-03-03</td>
+                    <td>Fornecedor C</td>
+                    <td>30</td>
+                </tr>
+                <tr onclick="showPopup('Produto 4')">
+                    <td>Produto 4</td>
+                    <td>D4D4D</td>
+                    <td>2023-04-04</td>
+                    <td>Fornecedor D</td>
+                    <td>40</td>
+                </tr>
+                <tr onclick="showPopup('Produto 5')">
+                    <td>Produto 5</td>
+                    <td>E5E5E</td>
+                    <td>2023-05-05</td>
+                    <td>Fornecedor E</td>
+                    <td>50</td>
+                </tr>
+                <tr onclick="showPopup('Produto 6')">
+                    <td>Produto 6</td>
+                    <td>F6F6F</td>
+                    <td>2023-06-06</td>
+                    <td>Fornecedor F</td>
+                    <td>60</td>
+                </tr>
+                <tr onclick="showPopup('Produto 7')">
+                    <td>Produto 7</td>
+                    <td>G7G7G</td>
+                    <td>2023-07-07</td>
+                    <td>Fornecedor G</td>
+                    <td>70</td>
+                </tr>
+                <tr onclick="showPopup('Produto 8')">
+                    <td>Produto 8</td>
+                    <td>H8H8H</td>
+                    <td>2023-08-08</td>
+                    <td>Fornecedor H</td>
+                    <td>80</td>
+                </tr>
+                <tr onclick="showPopup('Produto 9')">
+                    <td>Produto 9</td>
+                    <td>I9I9I</td>
+                    <td>2023-09-09</td>
+                    <td>Fornecedor I</td>
+                    <td>90</td>
+                </tr>
+                <tr onclick="showPopup('Produto 10')">
+                    <td>Produto 10</td>
+                    <td>J0J0J</td>
+                    <td>2023-10-10</td>
+                    <td>Fornecedor J</td>
+                    <td>100</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div id="overlay" class="overlay" onclick="closePopup()"></div>
+    <div id="popup" class="popup">
+        <h2 id="popup-title">Retirar Itens</h2>
+        <input type="number" id="quantity-input" placeholder="Quantidade a retirar">
+        <button onclick="retirarItens()">Retirar</button>
+    </div>
+
+    <script>
+        function showPopup(product) {
+            document.getElementById('popup-title').innerText = `Retirar Itens - ${product}`;
+            document.getElementById('overlay').style.display = 'block';
+            document.getElementById('popup').style.display = 'block';
+        }
+
+        function closePopup() {
+            document.getElementById('overlay').style.display = 'none';
+            document.getElementById('popup').style.display = 'none';
+        }
+
+        function retirarItens() {
+            const quantity = document.getElementById('quantity-input').value;
+            alert(`Quantidade retirada: ${quantity}`);
+            closePopup();
+        }
+    </script>
+</body>
+</html>

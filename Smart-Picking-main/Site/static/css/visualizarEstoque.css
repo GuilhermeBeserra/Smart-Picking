@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+        .sidebar {
+            width: 20%;
+            background-color: #2C3E50;
+            color: white;
+            padding: 20px;
+            height: 100vh;
+            position: relative;
+        }
+        .sidebar h1 {
+            margin: 0;
+            padding: 10px 0;
+            font-size: 1.5em;
+            text-align: center;
+        }
+        .sidebar h2 {
+            margin: 0;
+            padding: 5px 0;
+            font-size: 0.8em;
+            color: #BDC3C7;
+            text-align: center;
+        }
+        .sidebar ul {
+            list-style-type: none;
+            padding: 0;
+            margin-top: 20px;
+        }
+        .sidebar ul li {
+            padding: 10px 0;
+            border-bottom: 3px solid white;
+            font-size: 1.3em;
+        }
+        .sidebar ul li a {
+            color: white;
+            text-decoration: none;
+        }
+        .logo-container {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+        }
+        .logo-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        .main-content {
+            width: 80%;
+            padding: 20px;
+        }
+        .main-content h1 {
+            font-size: 2em;
+            color: #34495E;
+            text-align: center;
+        }
+        .search-bar {
+            display: flex;
+            align-items: center;
+            margin: 20px 0;
+        }
+        .search-bar input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .table-container {
+            overflow-x: auto;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: #87A5CB;
+        }
+        table, th, td {
+            border: 1px solid #ccc;
+        }
+        th, td {
+            padding: 15px;
+            text-align: left;
+        }
+        th {
+            background-color: #34495E;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #ECF0F1;
+        }
+        tr:nth-child(odd) {
+            background-color: #BDC3C7;
+        }
+        .pagination {
+            margin-top: 20px;
+            text-align: right;
+        }
+        .pagination a {
+            color: #34495E;
+            text-decoration: none;
+            margin: 0 5px;
+        }
+        .pagination a.active {
+            font-weight: bold;
+        }
